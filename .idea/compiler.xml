@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="MyBatis-spring整合" />
+        <module name="spring-12-事务" />
+        <module name="spring-11-事务" />
+        <module name="MyBatis-advanced" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>

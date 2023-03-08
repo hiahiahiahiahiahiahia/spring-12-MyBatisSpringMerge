@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--名称空间-->
+<mapper namespace="com.zfy.mapper.ServiceMapper">
+    <!--写sql语句-->
+    <!--动态条件查询！-->
+    <select id="selectByConditions" resultType="com.zfy.Service.impl.ServiceDao">
+        select *
+        from countrylanguage
+        <where>
+            <if test="countrycode != null and countrycode != ''">
+                and CountryCode=#{countrycode}
+            </if>
+            <if test="language != null and language != ''">
+                and Language=#{language}
+            </if>
+        </where>
+    </select>
+
+    <!--单条件查询,只会运行其中的一个！-->
+    <select id="selectSingle" resultType="com.zfy.Service.impl.ServiceDao">
+        select *
+        from countrylanguage
+        where
+        <choose>
+            <when test="countrycode != null and countrycode != ''">
+                CountryCode=#{countrycode}
+            </when>
+            <when test="language != null and language != ''">
+                Language=#{language}
+            </when>
+            <otherwise>
+                1 = 1
+            </otherwise>
+        </choose>
+    </select>
+    <select id="selectAll" resultType="com.zfy.Service.impl.ServiceDao">
+        select *
+        from countrylanguage;
+    </select>
+</mapper>

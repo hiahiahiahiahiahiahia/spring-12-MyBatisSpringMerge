@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--名称空间-->
+<mapper namespace="com.zfy.mapper.UserMapper">
+    <!--写sql语句-->
+
+    <select id="selectById" resultType="com.zfy.Dao.impl.UserDao">
+        select *
+        from city
+        where ID=${id}
+    </select>
+</mapper>
